@@ -1,6 +1,6 @@
 <?php
 /**
- * Код для импорта Views
+ * РљРѕРґ РґР»СЏ РёРјРїРѕСЂС‚Р° Views
  */
 
 $view = new view();
@@ -8,37 +8,37 @@ $view->name = 'kyrs';
 $view->description = '';
 $view->tag = 'default';
 $view->base_table = 'nbrb';
-$view->human_name = 'Курсы валют';
+$view->human_name = 'РљСѓСЂСЃС‹ РІР°Р»СЋС‚';
 $view->core = 7;
 $view->api_version = '3.0';
 $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
 
 /* Display: Master */
 $handler = $view->new_display('default', 'Master', 'default');
-$handler->display->display_options['title'] = 'Курсы валют';
+$handler->display->display_options['title'] = 'РљСѓСЂСЃС‹ РІР°Р»СЋС‚';
 $handler->display->display_options['use_more_always'] = FALSE;
-$handler->display->display_options['use_more_text'] = 'ещё';
+$handler->display->display_options['use_more_text'] = 'РµС‰С‘';
 $handler->display->display_options['access']['type'] = 'none';
 $handler->display->display_options['cache']['type'] = 'none';
 $handler->display->display_options['query']['type'] = 'views_query';
 $handler->display->display_options['exposed_form']['type'] = 'basic';
-$handler->display->display_options['exposed_form']['options']['submit_button'] = 'Применить';
-$handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Сбросить';
-$handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Сортировать по:';
-$handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'По возрастанию';
-$handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'По убыванию';
+$handler->display->display_options['exposed_form']['options']['submit_button'] = 'РџСЂРёРјРµРЅРёС‚СЊ';
+$handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'РЎР±СЂРѕСЃРёС‚СЊ';
+$handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'РЎРѕСЂС‚РёСЂРѕРІР°С‚СЊ РїРѕ:';
+$handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'РџРѕ РІРѕР·СЂР°СЃС‚Р°РЅРёСЋ';
+$handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'РџРѕ СѓР±С‹РІР°РЅРёСЋ';
 $handler->display->display_options['pager']['type'] = 'full';
 $handler->display->display_options['pager']['options']['items_per_page'] = '10';
 $handler->display->display_options['pager']['options']['offset'] = '0';
 $handler->display->display_options['pager']['options']['id'] = '0';
 $handler->display->display_options['pager']['options']['quantity'] = '9';
-$handler->display->display_options['pager']['options']['expose']['items_per_page_label'] = 'Элементов на страницу';
-$handler->display->display_options['pager']['options']['expose']['items_per_page_options_all_label'] = '- Все -';
-$handler->display->display_options['pager']['options']['expose']['offset_label'] = 'Пропустить';
-$handler->display->display_options['pager']['options']['tags']['first'] = '« первая';
-$handler->display->display_options['pager']['options']['tags']['previous'] = '‹ предыдущая';
-$handler->display->display_options['pager']['options']['tags']['next'] = 'следующая ›';
-$handler->display->display_options['pager']['options']['tags']['last'] = 'последняя »';
+$handler->display->display_options['pager']['options']['expose']['items_per_page_label'] = 'Р­Р»РµРјРµРЅС‚РѕРІ РЅР° СЃС‚СЂР°РЅРёС†Сѓ';
+$handler->display->display_options['pager']['options']['expose']['items_per_page_options_all_label'] = '- Р’СЃРµ -';
+$handler->display->display_options['pager']['options']['expose']['offset_label'] = 'РџСЂРѕРїСѓСЃС‚РёС‚СЊ';
+$handler->display->display_options['pager']['options']['tags']['first'] = 'В« РїРµСЂРІР°СЏ';
+$handler->display->display_options['pager']['options']['tags']['previous'] = 'вЂ№ РїСЂРµРґС‹РґСѓС‰Р°СЏ';
+$handler->display->display_options['pager']['options']['tags']['next'] = 'СЃР»РµРґСѓСЋС‰Р°СЏ вЂє';
+$handler->display->display_options['pager']['options']['tags']['last'] = 'РїРѕСЃР»РµРґРЅСЏСЏ В»';
 $handler->display->display_options['style_plugin'] = 'table';
 $handler->display->display_options['style_options']['columns'] = array(
   'data' => 'data',
@@ -93,62 +93,62 @@ $handler->display->display_options['style_options']['info'] = array(
     'empty_column' => 0,
   ),
 );
-/* Поле: National Bank of Belarus: Дата */
+/* РџРѕР»Рµ: National Bank of Belarus: Р”Р°С‚Р° */
 $handler->display->display_options['fields']['data']['id'] = 'data';
 $handler->display->display_options['fields']['data']['table'] = 'nbrb';
 $handler->display->display_options['fields']['data']['field'] = 'data';
 $handler->display->display_options['fields']['data']['date_format'] = 'custom';
 $handler->display->display_options['fields']['data']['custom_date_format'] = 'Y-m-d';
 $handler->display->display_options['fields']['data']['second_date_format'] = 'long';
-/* Поле: National Bank of Belarus: Price of gold */
+/* РџРѕР»Рµ: National Bank of Belarus: Price of gold */
 $handler->display->display_options['fields']['price_0']['id'] = 'price_0';
 $handler->display->display_options['fields']['price_0']['table'] = 'nbrb';
 $handler->display->display_options['fields']['price_0']['field'] = 'price_0';
-/* Поле: National Bank of Belarus: Price of palladium */
+/* РџРѕР»Рµ: National Bank of Belarus: Price of palladium */
 $handler->display->display_options['fields']['price_3']['id'] = 'price_3';
 $handler->display->display_options['fields']['price_3']['table'] = 'nbrb';
 $handler->display->display_options['fields']['price_3']['field'] = 'price_3';
-/* Поле: National Bank of Belarus: Price of platinum */
+/* РџРѕР»Рµ: National Bank of Belarus: Price of platinum */
 $handler->display->display_options['fields']['price_2']['id'] = 'price_2';
 $handler->display->display_options['fields']['price_2']['table'] = 'nbrb';
 $handler->display->display_options['fields']['price_2']['field'] = 'price_2';
-/* Поле: National Bank of Belarus: Price of silver */
+/* РџРѕР»Рµ: National Bank of Belarus: Price of silver */
 $handler->display->display_options['fields']['price_1']['id'] = 'price_1';
 $handler->display->display_options['fields']['price_1']['table'] = 'nbrb';
 $handler->display->display_options['fields']['price_1']['field'] = 'price_1';
-/* Поле: National Bank of Belarus: Average price */
+/* РџРѕР»Рµ: National Bank of Belarus: Average price */
 $handler->display->display_options['fields']['avg_price']['id'] = 'avg_price';
 $handler->display->display_options['fields']['avg_price']['table'] = 'nbrb';
 $handler->display->display_options['fields']['avg_price']['field'] = 'avg_price';
-$handler->display->display_options['fields']['avg_price']['label'] = 'Золото ср. знач за месяц';
+$handler->display->display_options['fields']['avg_price']['label'] = 'Р—РѕР»РѕС‚Рѕ СЃСЂ. Р·РЅР°С‡ Р·Р° РјРµСЃСЏС†';
 $handler->display->display_options['fields']['avg_price']['avg_type'] = '1';
 $handler->display->display_options['fields']['avg_price']['metal_id'] = '0';
-/* Поле: National Bank of Belarus: Average price */
+/* РџРѕР»Рµ: National Bank of Belarus: Average price */
 $handler->display->display_options['fields']['avg_price_1']['id'] = 'avg_price_1';
 $handler->display->display_options['fields']['avg_price_1']['table'] = 'nbrb';
 $handler->display->display_options['fields']['avg_price_1']['field'] = 'avg_price';
-$handler->display->display_options['fields']['avg_price_1']['label'] = 'Серебро ср. знач за месяц';
+$handler->display->display_options['fields']['avg_price_1']['label'] = 'РЎРµСЂРµР±СЂРѕ СЃСЂ. Р·РЅР°С‡ Р·Р° РјРµСЃСЏС†';
 $handler->display->display_options['fields']['avg_price_1']['avg_type'] = '1';
 $handler->display->display_options['fields']['avg_price_1']['metal_id'] = '1';
-/* Поле: National Bank of Belarus: Average price */
+/* РџРѕР»Рµ: National Bank of Belarus: Average price */
 $handler->display->display_options['fields']['avg_price_2']['id'] = 'avg_price_2';
 $handler->display->display_options['fields']['avg_price_2']['table'] = 'nbrb';
 $handler->display->display_options['fields']['avg_price_2']['field'] = 'avg_price';
-$handler->display->display_options['fields']['avg_price_2']['label'] = 'Платина ср. знач за месяц';
+$handler->display->display_options['fields']['avg_price_2']['label'] = 'РџР»Р°С‚РёРЅР° СЃСЂ. Р·РЅР°С‡ Р·Р° РјРµСЃСЏС†';
 $handler->display->display_options['fields']['avg_price_2']['avg_type'] = '1';
 $handler->display->display_options['fields']['avg_price_2']['metal_id'] = '2';
-/* Поле: National Bank of Belarus: Average price */
+/* РџРѕР»Рµ: National Bank of Belarus: Average price */
 $handler->display->display_options['fields']['avg_price_3']['id'] = 'avg_price_3';
 $handler->display->display_options['fields']['avg_price_3']['table'] = 'nbrb';
 $handler->display->display_options['fields']['avg_price_3']['field'] = 'avg_price';
-$handler->display->display_options['fields']['avg_price_3']['label'] = 'Палладий ср. знач за месяц';
+$handler->display->display_options['fields']['avg_price_3']['label'] = 'РџР°Р»Р»Р°РґРёР№ СЃСЂ. Р·РЅР°С‡ Р·Р° РјРµСЃСЏС†';
 $handler->display->display_options['fields']['avg_price_3']['avg_type'] = '1';
 $handler->display->display_options['fields']['avg_price_3']['metal_id'] = '3';
-/* Поле: National Bank of Belarus: Average price */
+/* РџРѕР»Рµ: National Bank of Belarus: Average price */
 $handler->display->display_options['fields']['avg_price_4']['id'] = 'avg_price_4';
 $handler->display->display_options['fields']['avg_price_4']['table'] = 'nbrb';
 $handler->display->display_options['fields']['avg_price_4']['field'] = 'avg_price';
-/* Критерий фильтра: National Bank of Belarus: Дата */
+/* РљСЂРёС‚РµСЂРёР№ С„РёР»СЊС‚СЂР°: National Bank of Belarus: Р”Р°С‚Р° */
 $handler->display->display_options['filters']['data']['id'] = 'data';
 $handler->display->display_options['filters']['data']['table'] = 'nbrb';
 $handler->display->display_options['filters']['data']['field'] = 'data';
@@ -161,31 +161,31 @@ $handler = $view->new_display('page', 'Page', 'page');
 $handler->display->display_options['path'] = 'kyrs';
 $translatables['kyrs'] = array(
   t('Master'),
-  t('Курсы валют'),
-  t('ещё'),
-  t('Применить'),
-  t('Сбросить'),
-  t('Сортировать по:'),
-  t('По возрастанию'),
-  t('По убыванию'),
-  t('Элементов на страницу'),
-  t('- Все -'),
-  t('Пропустить'),
-  t('« первая'),
-  t('‹ предыдущая'),
-  t('следующая ›'),
-  t('последняя »'),
-  t('Дата'),
+  t('РљСѓСЂСЃС‹ РІР°Р»СЋС‚'),
+  t('РµС‰С‘'),
+  t('РџСЂРёРјРµРЅРёС‚СЊ'),
+  t('РЎР±СЂРѕСЃРёС‚СЊ'),
+  t('РЎРѕСЂС‚РёСЂРѕРІР°С‚СЊ РїРѕ:'),
+  t('РџРѕ РІРѕР·СЂР°СЃС‚Р°РЅРёСЋ'),
+  t('РџРѕ СѓР±С‹РІР°РЅРёСЋ'),
+  t('Р­Р»РµРјРµРЅС‚РѕРІ РЅР° СЃС‚СЂР°РЅРёС†Сѓ'),
+  t('- Р’СЃРµ -'),
+  t('РџСЂРѕРїСѓСЃС‚РёС‚СЊ'),
+  t('В« РїРµСЂРІР°СЏ'),
+  t('вЂ№ РїСЂРµРґС‹РґСѓС‰Р°СЏ'),
+  t('СЃР»РµРґСѓСЋС‰Р°СЏ вЂє'),
+  t('РїРѕСЃР»РµРґРЅСЏСЏ В»'),
+  t('Р”Р°С‚Р°'),
   t('Price of gold'),
   t('.'),
   t(','),
   t('Price of palladium'),
   t('Price of platinum'),
   t('Price of silver'),
-  t('Золото ср. знач за месяц'),
-  t('Серебро ср. знач за месяц'),
-  t('Платина ср. знач за месяц'),
-  t('Палладий ср. знач за месяц'),
+  t('Р—РѕР»РѕС‚Рѕ СЃСЂ. Р·РЅР°С‡ Р·Р° РјРµСЃСЏС†'),
+  t('РЎРµСЂРµР±СЂРѕ СЃСЂ. Р·РЅР°С‡ Р·Р° РјРµСЃСЏС†'),
+  t('РџР»Р°С‚РёРЅР° СЃСЂ. Р·РЅР°С‡ Р·Р° РјРµСЃСЏС†'),
+  t('РџР°Р»Р»Р°РґРёР№ СЃСЂ. Р·РЅР°С‡ Р·Р° РјРµСЃСЏС†'),
   t('Average price'),
   t('Page'),
 );
