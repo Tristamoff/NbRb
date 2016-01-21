@@ -1,0 +1,66 @@
+<?php
+
+/**
+ * Implements hook_schema().
+ */
+function nbrb_schema() {
+  $schema['nbrb'] = array(
+    'fields' => array(
+      'id' => array(
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE
+      ),
+      'price_0' => array(
+        'description' => 'Price Gold',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0
+      ),
+      'price_1' => array(
+        'description' => 'Price Silver',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0
+      ),
+      'price_2' => array(
+        'description' => 'Price Platinum',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0
+      ),
+      'price_3' => array(
+        'description' => 'Price Palladium',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0
+      ),
+      'avg_price' => array(
+        'description' => 'Avg Price(for views).',
+        'type' => 'int',
+        'default' => 0
+      ),
+      'data' => array(
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+    ),
+    'unique keys' => array(
+      'data' => array('data'),
+    ),
+    'primary key' => array('id'),
+  );
+  return $schema;
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function nbrb_uninstall() {
+  variable_del('last_nbrb');
+}

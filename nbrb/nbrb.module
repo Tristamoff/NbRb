@@ -1,0 +1,53 @@
+<?php
+
+/**
+ * Implements of hook_views_api().
+ */
+function nbrb_views_api() {
+  return array(
+    'api' => 3,
+    'path' => drupal_get_path('module', 'nbrb') . '/includes/views',
+  );
+}
+
+/**
+ * Implementation of hook_views_handlers().
+ */
+function nbrb_views_handlers() {
+  return array(
+    'info' => array(
+      'path' => drupal_get_path('module', 'nbrb') . '/includes/views/handlers',
+    ),
+    'handlers' => array(
+      'views_handler_field_nbrb_price_avg' => array(
+        'parent' => 'views_handler_field_numeric',
+      ),
+    ),
+  );
+}
+
+/**
+ * Implements hook_cron().
+ */
+function nbrb_cron() {
+  $last_cron = variable_get('last_nbrb', '1/1/2008');
+  $url = 'http://www.nbrb.by/Services/XmlMetals.aspx?fromDate=' . $last_cron;
+  $xml = simplexml_load_file($url);
+  foreach ($xml->AccountPrice as $price) {
+    $attr = $price->attributes();
+    $date = (string) $attr['Date'];
+    $date_timestamp = strtotime($date);
+    $metal_id = (string) $attr['MetalId'];
+    $price = (int) $price->Price;
+
+    $upd = array('price_' . $metal_id => $price);
+    $fields = array('data' => $date_timestamp, 'price_' . $metal_id => $price);
+
+    db_merge('nbrb')
+      ->key(array('data' => $date_timestamp))
+      ->fields($fields)
+      ->updateFields($upd)
+      ->execute();
+  }
+  variable_set('last_nbrb', $date);
+}
