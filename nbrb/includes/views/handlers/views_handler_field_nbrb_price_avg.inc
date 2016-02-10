@@ -24,6 +24,8 @@ class views_handler_field_nbrb_price_avg extends views_handler_field_numeric {
       '#options' => array(
         1 => t('1 month'),
         3 => t('3 months'),
+        6 => t('6 months'),
+        12 => t('1 year'),
       ),
       '#default_value' => isset($this->options['avg_type']) ? $this->options['avg_type'] : 1,
     );

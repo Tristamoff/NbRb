@@ -44,6 +44,14 @@ function nbrb_views_data() {
     $i++;
   }
 
+  $data['nbrb']['id'] = array(
+    'title' => t('Row id'),
+    'help' => t('ID of row in database'),
+    'field' => array(
+      'handler' => 'views_handler_field_numeric',
+    ),
+  );
+  
   $data['nbrb']['avg_price'] = array(
     'title' => t('Average price'),
     'help' => t('Average price of any metal'),
@@ -64,6 +72,9 @@ function nbrb_views_data() {
     ),
     'filter' => array(
       'handler' => 'views_handler_filter_date',
+    ),
+	'argument' => array(
+      'handler' => 'views_handler_argument_nbrb_date',
     ),
   );
   return $data;

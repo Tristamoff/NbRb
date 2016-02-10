@@ -8,3 +8,4 @@ datestamp = "1440020680"
 
 ; Handlers
 files[] = includes/views/handlers/views_handler_field_nbrb_price_avg.inc
+files[] = includes/views/handlers/views_handler_argument_nbrb_date.inc
