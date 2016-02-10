@@ -50,6 +50,9 @@ function nbrb_views_data() {
     'field' => array(
       'handler' => 'views_handler_field_numeric',
     ),
+	'argument' => array(
+      'handler' => 'views_handler_argument_numeric',
+    ),
   );
   
   $data['nbrb']['avg_price'] = array(
